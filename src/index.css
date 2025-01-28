@@ -1,0 +1,106 @@
+/* src/index.css */
+
+/* Estilos globales */
+body {
+  background-image: url('/src/assets/background.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* Estilos para la barra de navegación */
+nav ul {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  background-color: #333;
+  margin-bottom: 20px;
+  align-items: center;
+}
+
+nav li {
+  margin: 0;
+}
+
+nav li.logo {
+  margin-right: auto;
+}
+
+nav li.logo img {
+  height: 50px;
+  padding: 5px;
+}
+
+nav a {
+  display: block;
+  color: white;
+  padding: 14px 20px;
+  text-decoration: none;
+}
+
+nav a.active {
+  background-color: #4CAF50;
+}
+
+nav a:hover:not(.active) {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Estilos para el contenedor translúcido */
+.contenedor {
+  background-color: rgba(255, 255, 255, 0.80); /* Blanco con opacidad del 80% */
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+/* Estilos para tablas */
+table {
+  border-collapse: collapse;
+  width: 100%;
+  background-color: white;
+  margin-top: 20px;
+}
+
+th, td {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+th {
+  background-color: #f2f2f2;
+}
+
+/* Estilos para botones */
+button {
+  padding: 8px 15px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+/* Estilos para el botón de eliminar */
+.boton-eliminar {
+  background-color: #ff4d4d;
+}
+
+.boton-eliminar:hover {
+  background-color: #cc0000;
+}
+
+/* Estilos responsivos */
+@media (max-width: 600px) {
+  nav ul {
+    flex-direction: column;
+  }
+}
