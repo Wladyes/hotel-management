@@ -10,8 +10,6 @@ Este proyecto es una aplicación web desarrollada con **React** y **TypeScript**
 - [Estructura del Proyecto](#estructura-del-proyecto)
 - [Tecnologías Utilizadas](#tecnologías-utilizadas)
 - [Contribuciones](#contribuciones)
-- [Licencia](#licencia)
-- [Agradecimientos](#agradecimientos)
 
 ## Características
 
