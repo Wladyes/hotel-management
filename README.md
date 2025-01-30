@@ -118,4 +118,4 @@ Sigue estos pasos para ejecutar el proyecto en tu entorno local:
 
 - Wladymir Escobar  L00409170 gwescobar@espe.edu.ec
 - Sandy Mariño L00409136 sjmarino1@espe.edu.ec
-- 
+- Margarita Fajardo L00415848 mcfajardo1@espe.edu.ec
