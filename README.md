@@ -116,6 +116,6 @@ Sigue estos pasos para ejecutar el proyecto en tu entorno local:
 
 ## Contribuciones
 
-- **Wladymir Escobar  L00409170 gwescobar@espe.edu.ec
-- **Sandy Mariño L00409136 sjmarino1@espe.edu.ec
-- **
+- Wladymir Escobar  L00409170 gwescobar@espe.edu.ec
+- Sandy Mariño L00409136 sjmarino1@espe.edu.ec
+- 
