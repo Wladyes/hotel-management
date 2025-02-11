@@ -1,121 +1,172 @@
-# Sistema de Gestión de Reservas de Hotel
-
-Este proyecto es una aplicación web desarrollada con **React** y **TypeScript** que simula un sistema básico de gestión de reservas hoteleras. Permite la administración de clientes, habitaciones y reservas, ofreciendo una experiencia interactiva y amigable para el usuario.
-
-## Tabla de Contenidos
-
-- [Características](#características)
-- [Instalación](#instalación)
-- [Uso](#uso)
-- [Estructura del Proyecto](#estructura-del-proyecto)
-- [Tecnologías Utilizadas](#tecnologías-utilizadas)
-- [Contribuciones](#contribuciones)
-
-## Características
-
-- **Gestión de Clientes**: Crear, editar y eliminar clientes.
-- **Gestión de Habitaciones**: Crear, editar y eliminar habitaciones.
-- **Gestión de Reservas**:
-  - Crear nuevas reservas asociando clientes y habitaciones disponibles.
-  - Validación para evitar solapamientos de fechas en las reservas.
-  - Cancelación de reservas existentes.
-- **Persistencia de Datos**: Almacenamiento y recuperación de información utilizando `localStorage`.
-- **Interfaz Intuitiva**:
-  - Navegación fluida utilizando `react-router-dom`.
-  - Diseño responsivo con un fondo translúcido que permite visualizar el wallpaper.
-  - Menú de navegación para acceder fácilmente a las diferentes secciones.
-
-## Instalación
-
+EduConnect
+EduConnect es una aplicación web desarrollada con React y TypeScript que simula una red social académica dirigida a estudiantes y docentes. Permite la creación y gestión de publicaciones, comentarios y perfiles de usuario, fomentando la interacción y colaboración en un entorno educativo dinámico.
+Tabla de Contenidos
+Características
+Instalación
+Uso
+Página de Inicio
+Registro e Inicio de Sesión
+Publicaciones
+Perfil de Usuario
+Panel de Administración
+Estructura del Proyecto
+Tecnologías Utilizadas
+Dependencias Instaladas
+Contribuciones
+Notas Importantes
+Características
+Gestión de Usuarios
+Registro de nuevos usuarios con roles de Publicador o Administrador.
+Inicio y cierre de sesión.
+Edición del perfil de usuario y cambio de imagen de perfil.
+Publicaciones
+Creación de nuevas publicaciones con contenido textual.
+Visualización de publicaciones existentes.
+Eliminación de publicaciones propias.
+Comentarios
+Agregar comentarios a las publicaciones.
+Visualización de comentarios asociados a cada publicación.
+Reacciones ("Me gusta") en los comentarios.
+Eliminación de comentarios propios.
+Administración
+Panel de administración para usuarios con rol de Administrador.
+Gestión de usuarios: cambio de roles y eliminación.
+Eliminación de publicaciones y comentarios desde el panel de administración.
+Seguridad y Validaciones
+Cifrado de contraseñas utilizando bcrypt.
+Validación de correos electrónicos y contraseñas.
+Restricciones en la eliminación de contenido según roles.
+Instalación
 Sigue estos pasos para ejecutar el proyecto en tu entorno local:
+Clona el repositorio:
+bash
 
-1. **Clona el repositorio**:
 
-   ```bash
-   git clone https://github.com/tu-usuario/nombre-del-repositorio.git
-   ```
+git clone https://github.com/tu-usuario/educonnect.git
+Navega al directorio del proyecto:
+bash
 
-2. **Navega al directorio del proyecto**:
 
-   ```bash
-   cd nombre-del-repositorio
-   ```
+cd educonnect
+Instala las dependencias:
+bash
 
-3. **Instala las dependencias**:
 
-   ```bash
-   npm install
-   ```
+npm install
+Instala dependencias adicionales necesarias: Para asegurar la compatibilidad y correcto funcionamiento de algunos módulos en navegadores, instala los siguientes paquetes:
+bash
 
-4. **Inicia la aplicación**:
 
-   ```bash
-   npm run dev
-   ```
+npm install --save-dev @esbuild-plugins/node-modules-polyfill @esbuild-plugins/node-globals-polyfill
+npm install --save-dev crypto-browserify stream-browserify
+Inicia la aplicación:
+bash
 
-5. **Abre tu navegador web** y visita `http://localhost:......` para ver la aplicación en funcionamiento.
 
-## Uso
+npm run dev
+Abre tu navegador web y visita http://localhost:3000 para ver la aplicación en funcionamiento.
+Uso
+Página de Inicio
+Introducción a EduConnect y acceso al menú de navegación.
+Registro e Inicio de Sesión
+Registro
+Completa el formulario de registro proporcionando:
+Nombre de usuario.
+Correo electrónico.
+Contraseña.
+Rol (Publicador o Administrador).
+Nota: Para registrar un usuario con rol de Administrador, el correo electrónico debe seguir el patrón admin<number>@educonnect (por ejemplo, admin1@educonnect). De lo contrario, el sistema asignará el rol de Publicador.
+Inicio de Sesión
+Accede con tus credenciales para utilizar las funcionalidades de la aplicación.
+Publicaciones
+Crear Publicación: Comparte tus ideas o pensamientos con la comunidad escribiendo una nueva publicación.
+Comentar y Reaccionar:
+Agrega comentarios a las publicaciones existentes.
+Reacciona a los comentarios con "Me gusta".
+Eliminar Publicación o Comentario:
+Solo puedes eliminar tus propias publicaciones y comentarios.
+Los administradores pueden eliminar cualquier publicación o comentario desde el panel de administración.
+Perfil de Usuario
+Edita tu nombre de usuario y cambia tu imagen de perfil.
+Panel de Administración
+Disponible solo para usuarios con rol de Administrador.
+Gestión de usuarios:
+Cambia roles entre Publicador y Administrador.
+Elimina usuarios (excepto administradores principales).
+Gestión de contenido:
+Elimina publicaciones y comentarios de cualquier usuario.
+Estructura del Proyecto
+plaintext
 
-- **Página de Inicio**:
-  - Introducción al sistema y guía para utilizar el menú de navegación.
-- **Clientes**:
-  - Añade nuevos clientes mediante un formulario.
-  - Edita información de clientes existentes.
-  - Elimina clientes según sea necesario.
-- **Habitaciones**:
-  - Crea habitaciones especificando tipo y precio.
-  - Modifica detalles de habitaciones existentes.
-  - Elimina habitaciones del sistema.
-- **Reservas**:
-  - Crea reservas seleccionando un cliente y una o varias habitaciones.
-  - Las fechas de las reservas se validan para evitar conflictos.
-  - Cancela reservas si el cliente lo solicita.
 
-## Estructura del Proyecto
-
-```
-├── src
-│   ├── components
-│   │   ├── ClienteForm.tsx
-│   │   ├── HabitacionForm.tsx
-│   │   ├── ReservaForm.tsx
-│   │   ├── ListaClientes.tsx
-│   │   ├── ListaHabitaciones.tsx
-│   │   └── ListaReservas.tsx
-│   ├── pages
-│   │   ├── HomePage.tsx
-│   │   ├── ClientesPage.tsx
-│   │   ├── HabitacionesPage.tsx
-│   │   └── ReservasPage.tsx
-│   ├── types
-│   │   ├── Cliente.ts
-│   │   ├── Habitacion.ts
-│   │   └── Reserva.ts
-│   ├── App.tsx
-│   ├── main.tsx
-│   └── index.css
-├── public
-│   └── assets
-│       └── images
-│           ├── logo.png
-│           └── background.jpg
-├── package.json
-├── tsconfig.json
-└── README.md
-```
-
-## Tecnologías Utilizadas
-
-- **React**: Librería para construir interfaces de usuario interactivas.
-- **TypeScript**: Superset de JavaScript que añade tipado estático al lenguaje.
-- **Vite**: Herramienta para el desarrollo rápido de aplicaciones web.
-- **React Router DOM**: Manejo de rutas y navegación en la aplicación.
-- **CSS3**: Estilos y diseño responsivo.
-- **localStorage**: Almacenamiento de datos en el navegador para persistencia.
-
-## Contribuciones
-
-- Wladymir Escobar  L00409170 gwescobar@espe.edu.ec
-- Sandy Mariño L00409136 sjmarino1@espe.edu.ec
-- Margarita Fajardo L00415848 mcfajardo1@espe.edu.ec
+educonnect/
+├── public/
+│   └── images/              // Carpeta para imágenes públicas
+├── src/
+│   ├── components/          // Componentes reutilizables
+│   ├── pages/               // Páginas principales de la aplicación
+│   ├── contexts/            // Contextos para manejar estados globales
+│   ├── routes/              // Configuración de rutas
+│   ├── types/               // Tipos e interfaces de TypeScript
+│   ├── utils/               // Utilidades y funciones auxiliares
+│   ├── App.tsx              // Componente principal de la aplicación
+│   ├── App.css              // Estilos globales para el componente App
+│   ├── main.tsx             // Punto de entrada principal de React
+│   ├── index.css            // Estilos globales de la aplicación
+│   └── theme.ts             // Definición de temas
+├── package.json             // Configuración de dependencias del proyecto
+├── tsconfig.json            // Configuración de TypeScript
+├── vite.config.ts           // Configuración de Vite
+├── index.html               // Archivo HTML principal
+└── README.md                // Documentación del proyecto
+Tecnologías Utilizadas
+React: Librería para construir interfaces de usuario interactivas.
+TypeScript: Superset de JavaScript que añade tipado estático al lenguaje.
+Vite: Herramienta para el desarrollo rápido de aplicaciones web.
+Material-UI (MUI): Framework de componentes para diseño de interfaces.
+React Router DOM: Manejo de rutas y navegación en la aplicación.
+bcryptjs: Cifrado de contraseñas.
+CSS3: Estilos y diseño responsivo.
+localStorage: Almacenamiento de datos en el navegador para persistencia.
+Dependencias Instaladas
+Dependencias Principales
+@emotion/react
+@emotion/styled
+@mui/icons-material
+@mui/material
+bcryptjs
+react
+react-dom
+react-router-dom
+Dependencias de Desarrollo
+@types/bcryptjs
+@types/react
+@types/react-dom
+@types/react-router-dom
+@vitejs/plugin-react
+eslint
+eslint-config-prettier
+typescript
+vite
+Dependencias Adicionales para Compatibilidad
+@esbuild-plugins/node-modules-polyfill
+@esbuild-plugins/node-globals-polyfill
+crypto-browserify
+stream-browserify
+Contribuciones
+Wladymir Escobar - Desarrollador Frontend
+Email: gwescobar@espe.edu.ec
+Margarita Fajardo - Desarrolladora Backend
+Email: mcfajardo1@espe.edu.ec
+Sandy Mariño - Gestora de Proyecto
+Email: sjmarino1@espe.edu.ec
+Notas Importantes
+Restricción para Registrar Administradores
+Solo es posible registrar usuarios con rol de Administrador si el correo electrónico sigue el patrón admin<number>@educonnect (por ejemplo, admin1@educonnect).
+Si intentas registrar un administrador con un correo que no cumpla este patrón, el sistema te asignará el rol de Publicador.
+Seguridad de Contraseñas
+Las contraseñas deben tener al menos 6 caracteres e incluir una letra, un número y un carácter especial.
+Las contraseñas se cifran utilizando bcrypt antes de almacenarse.
+Almacenamiento de Datos
+Los datos de usuarios, publicaciones y comentarios se almacenan en localStorage del navegador.
+Esto implica que los datos se mantendrán entre sesiones en el mismo navegador, pero no estarán disponibles si cambias de navegador o dispositivo.
